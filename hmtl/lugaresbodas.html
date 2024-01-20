@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lugares Bodas</title>
+  <link rel="stylesheet"  href="../css/header&footer.css">
+  <link rel="stylesheet"  href="../css/lugaresBodas.css"> 
+  <link rel="icon" href="/img/logoCM.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+  
+</head>
+<style>
+  body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #4b1114;
+}
+
+header {
+  background-color: #fff;
+  padding: 10px 20px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.svg-container {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  height:100vh;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-category {
+  position: relative;
+  margin-right: 20px;
+}
+
+.main-category .tituloLOGIN {
+  font-size: 17px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.main-category .tituloAEMP {
+  font-size: 12px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.main-category:hover .sub-categories {
+  display: block;
+}
+
+.main-category a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+  display: block;
+}
+
+.sub-categories {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.sub-category a {
+  color: #555;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+}
+
+.logout {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+font-size: 28px;
+color: #707070;
+
+}
+
+/* Colores de temática de bodas */
+.main-category a:hover,
+.sub-category a:hover {
+  background-color: #d22630;
+  color: #fff;
+}
+
+.logo {
+  height: auto !important;
+  width: 100% !important;
+  max-height: 34px;
+}
+
+
+
+
+
+
+
+/*ESTILOS FOOTER*/
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer-section {
+  margin-bottom: 20px;
+}
+
+.footer-section h3 {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffcccb;
+}
+
+.social-icons {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons a {
+  display: inline-block;
+  
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+
+.social-icons a img {
+  width: 40px;
+}
+
+/* Estilos de Responsive */
+@media screen and (max-width: 768px) {
+  .footer-container {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .footer-section {
+      width: 100%;
+  }
+
+  .social-icons {
+      margin-top: 20px;
+  }
+}
+
+/* Estilos para las tarjetas de lugares para bodas */
+.place-cards-container {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+}
+
+.place-card {
+flex-basis: calc(25% - 100px);
+min-width: 233px;
+margin: 20px;
+padding: 15px;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+border-radius: 8px;
+text-align: center;
+background-color: #b89696;
+}
+
+.place-card img {
+width: 100%;
+height: auto;
+min-height: 235px;
+border-radius: 6px;
+margin-bottom: 10px;
+}
+
+.place-card h3 {
+color: #d22630;
+margin-bottom: 10px;
+}
+
+.place-card p {
+margin-bottom: 10px;
+}
+
+.place-card a {
+display: inline-block;
+padding: 8px 16px;
+background-color: #d22630;
+color: #fff;
+text-decoration: none;
+border-radius: 4px;
+}
+
+.place-card a:hover {
+background-color: #fff;
+color: #d22630;
+border: 1px solid #d22630;
+}
+
+#lugares-boda {
+margin-top: 105px;
+}
+
+.logosHeader {
+position: absolute;
+top: 50%;
+transform: translateY(-55%);
+font-size: 28px;
+color: #707070;
+
+}
+
+.adminLogo {
+padding: 0px !important;
+position: absolute;
+  top: 50%;
+  transform: translateX(-45px) translateY(-50%);
+  font-size: 28px;
+  color: #707070;
+}
+
+h2 {
+text-align: center;
+}
+
+.atras {
+padding: 0px !important;
+  position: absolute;
+  top: 50%;
+  transform: translateX(24px) translateY(-55%);
+  font-size: 28px;
+  color: #707070;
+}
+
+
+
+
+/*BUSCADOR*/
+/* Estilos para el buscador */
+
+.search-container {
+max-width: 900px;
+margin: 20px auto;
+padding: 20px;
+background-color: #fff;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+border-radius: 8px;
+}
+
+
+label {
+margin-bottom: 5px;
+}
+
+input,
+select {
+width: 16%;
+padding: 8px;
+box-sizing: border-box;
+border: 1px solid #ccc;
+border-radius: 4px;
+}
+
+button {
+background-color: #d22630;
+color: #fff;
+padding: 10px 20px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+button:hover {
+background-color: #fff;
+color: #d22630;
+border: 1px solid #d22630;
+}
+
+/* Estilos para los resultados del buscador */
+#resultados-container {
+max-width: 800px;
+margin: 20px auto;
+padding: 20px;
+background-color: #fff;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+border-radius: 8px;
+}
+
+</style>
+<body>
+  <header>
+    <nav>
+      <div class="main-category">
+        <svg class="logo" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          class="thumbnail-icon" viewBox="11.39999771118164 0 177.20001220703125 200">
+          <g onclick="window.top.location.href='index.html';"
+            data-paper-data="{&quot;fillRule&quot;:&quot;nonzero&quot;,&quot;isIcon&quot;:true,&quot;iconStyle&quot;:&quot;standalone&quot;,&quot;selectedEffects&quot;:{&quot;container&quot;:&quot;&quot;,&quot;transformation&quot;:&quot;&quot;,&quot;pattern&quot;:&quot;&quot;},&quot;bounds&quot;:{&quot;x&quot;:64.99999999999999,&quot;y&quot;:189.17918170133197,&quot;width&quot;:81.19449002523977,&quot;height&quot;:91.64255308142259},&quot;iconType&quot;:&quot;icon&quot;,&quot;rawIconId&quot;:&quot;0c7437a2-010c-4109-8cd6-b7539157c5f2&quot;,&quot;isDetailed&quot;:false}">
+            <path
+              d="M49.8,16l7.6,25l32.6,110.6h16l34,-108.8c-0.6,-0.2 -13.4,-0.8 -15.4,-0.8l-25.4,84l-39.4,-126h-23.6v27.2c0.6,-0.4 9.6,-3 13.8,-3zM146.2,23.4l2.6,-7.4l-0.8,140.4c5.2,-0.4 12.4,-1.8 15.8,-4.4v-152h-23.8l-8.8,22.8c0.2,-0.2 14.4,0.6 15,0.6zM101.4,40c8.8,0 16.4,0 23.2,0.2c11.8,0.2 18.4,0.8 22,1.4l0.2,-16.4c-10.8,-0.6 -20,-0.8 -32.4,-0.8c-19.2,0 -33.6,0 -44.6,0.4l4.6,15.4c7.6,-0.2 16.8,-0.2 27,-0.2zM33.6,53.4c3.8,-7.6 10,-9.4 18.4,-11.4l3.6,-0.6l-4.8,-15.4c-5.2,0 -16,3.2 -21.2,6.6c-15.2,9.6 -18.2,21.4 -18.2,67.6c0,40.4 2.4,52 11.8,62c3.2,3.4 6.4,6 11,7.8v-23.2c-3.6,-7.2 -5.4,-19.6 -5.4,-46.6c0,-23.8 0.4,-38.2 4.8,-46.8zM170,72.6h17.2c-0.6,-23.6 -3.6,-33 -13.6,-39.8c-2.4,-1.6 -4.8,-3 -8,-4.2v20.6c3.6,4.2 4.4,10.6 4.4,19.6zM36.2,52.6v147.4h16l-0.8,-155.6c-7,1.4 -12.4,3.4 -15.2,8.2zM171.2,124.4v8.4c0,21.2 -5.2,23.6 -25.2,26c-10.8,1.2 -26.4,1.4 -48.4,1.4c-21.8,0 -34.8,-0.4 -43.6,-2v16c10.8,1.2 25.2,1.6 46.8,1.6c15.2,0 33.6,-0.4 45.2,-1c14.8,-0.8 27.2,-2.6 35,-11.8c5.8,-6.8 7.6,-14.6 7.6,-32.4v-6.2zM148,200h15.8v-25.4c-4.8,1 -9.4,1.6 -15.8,2z"
+              fill-rule="nonzero"></path>
+          </g>
+        </svg>
+      </div>
+      <div class="main-category">
+        <a href="lugaresBodas.html">Lugares para Boda</a>
+        <div class="sub-categories">
+          <div class="sub-category"><a href="lugaresBodas.html">Finca</a></div>
+          <div class="sub-category"><a href="lugaresBodas.html">Masía</a></div>
+          <div class="sub-category"><a href="lugaresBodas.html">Hotel</a></div>
+          <div class="sub-category"><a href="lugaresBodas.html">Restaurante</a></div>
+          <div class="sub-category"><a href="lugaresBodas.html">Salon de Boda</a></div>
+          <div class="sub-category"><a href="lugaresBodas.html">Castillo</a></div>
+          <div class="sub-category"><a href="lugaresBodas.html">Cortijo</a></div>
+          <div class="sub-category"><a href="lugaresBodas.html">Hacienda</a></div>
+          <div class="sub-category"><a href="lugaresBodas.html">Bodega</a></div>
+          <div class="sub-category"><a href="lugaresBodas.html">Espacio Singular</a></div>
+          <div class="sub-category"><a href="lugaresBodas.html">Playa</a></div>
+        </div>
+      </div>
+
+      <div class="main-category">
+        <a href="proveedores.html">Proveedores</a>
+        <div class="sub-categories">
+          <div class="sub-category"><a href="proveedores.html">AudioVisuales</a></div>
+          <div class="sub-category"><a href="proveedores.html">Catering</a></div>
+          <div class="sub-category"><a href="proveedores.html">Coches de boda</a></div>
+          <div class="sub-category"><a href="proveedores.html">Floristerías</a></div>
+          <div class="sub-category"><a href="proveedores.html">Invitaciones de boda</a></div>
+          <div class="sub-category"><a href="proveedores.html">Viaje de novios</a></div>
+          <div class="sub-category"><a href="proveedores.html">Tartas de boda</a></div>
+        </div>
+      </div>
+
+      <div class="main-category">
+        <a href="ideasBodaBlog.html">Ideas boda</a>
+        <div class="sub-categories">
+          <div class="sub-category"><a href="ideasBodaBlog.html">Antes de la boda</a></div>
+          <div class="sub-category"><a href="ideasBodaBlog.html">La ceremonia de boda</a></div>
+          <div class="sub-category"><a href="ideasBodaBlog.html">El banquete</a></div>
+          <div class="sub-category"><a href="ideasBodaBlog.html">Los servicios para tu boda</a></div>
+          <div class="sub-category"><a href="ideasBodaBlog.html">Moda nupcial</a></div>
+          <div class="sub-category"><a href="ideasBodaBlog.html">Belleza y salud</a></div>
+          <div class="sub-category"><a href="ideasBodaBlog.html">Luna de miel</a></div>
+          <div class="sub-category"><a href="ideasBodaBlog.html">Después de la boda</a></div>
+          <div class="sub-category"><a href="ideasBodaBlog.html">Hazlo tú mism@</a></div>
+          <div class="sub-category"><a href="ideasBodaBlog.html">Crónicas de boda</a></div>
+        </div>
+      </div>
+      
+    <div class='main-category'>
+        <a class='tituloLOGIN' href='login.html'>LOGIN</a>
+        <a class='tituloAEMP' href='login.html'>ACCESO EMPRESAS</a>
+    </div>
+      
+    </nav>
+  </header>
+  
+   <!-- Contenido específico de lugares para bodas -->
+  <section id="lugares-boda">
+    <div class="search-container">
+    <form id="search-form">
+      <div class="input-group">
+        <label for="tipo">Tipo:</label>
+        <select id="tipo" name="tipo">
+          <option value="">Todos</option>
+          <option value="">Finca Romantica</option>
+          <option value="">Masía Elegante</option>
+          <option value="">Hacienda Española</option>
+    
+        </select>
+
+        <label for="precio">Precio:</label>
+        <input type="number" id="precio" name="precio" placeholder="Precio máximo">
+
+        <label for="lugar">Lugar:</label>
+        <select id="lugar" name="lugar">
+          <option value="">Todos</option>
+          <option value="">Sevilla</option>
+          <option value="">Albacete</option>
+          <option value="">Cádiz</option>
+        </select>
+
+        <label for="invitados">Invitados:</label>
+        <input type="number" id="nInvitados" name="nInvitados" placeholder="Nº Invitados">
+      
+      <button type="submit">Buscar</button>
+      </div>
+    </form>
+  </div>
+
+	<div id="lugares" class="place-cards-container">
+		<div class="place-card">
+			  <img src="https://i.ibb.co/TqWVVJY/finca1.jpg">
+			  <h3>Masía Elegante</h3>
+			  <p>Descripcion</p>
+			  <p><i class="uil uil-map-marker"></i>Sevilla<i class="uil uil-users-alt"></i>1000</p>
+			  <p>10.000<i class="uil uil-euro"></i></p>
+			  <a href="index.html#contacto">Reservar</a>
+		</div>
+        <div class="place-card">
+            <img src="https://i.ibb.co/TqWVVJY/finca1.jpg">
+            <h3>Finca Romantica</h3>
+            <p>Descripcion</p>
+            <p><i class="uil uil-map-marker"></i>Albacete<i class="uil uil-users-alt"></i>1000</p>
+            <p>10.000<i class="uil uil-euro"></i></p>
+            <a href="index.html#contacto">Reservar</a>
+      </div>
+      <div class="place-card">
+        <img src="https://i.ibb.co/TqWVVJY/finca1.jpg">
+        <h3>Hacienda elegante</h3>
+        <p>Descripcion</p>
+        <p><i class="uil uil-map-marker"></i>Sevilla<i class="uil uil-users-alt"></i>500</p>
+        <p>6.000<i class="uil uil-euro"></i></p>
+        <a href="index.html#contacto">Reservar</a>
+  </div>
+  <div class="place-card">
+    <img src="https://i.ibb.co/TqWVVJY/finca1.jpg">
+    <h3>Hacienda Elegante</h3>
+    <p>Descripcion</p>
+    <p><i class="uil uil-map-marker"></i>Cádiz<i class="uil uil-users-alt"></i>300</p>
+    <p>3.000<i class="uil uil-euro"></i></p>
+    <a href="index.html#contacto">Reservar</a>
+</div>
+<div class="place-card">
+    <img src="https://i.ibb.co/TqWVVJY/finca1.jpg">
+    <h3>Finca Romantica</h3>
+    <p>Descripcion</p>
+    <p><i class="uil uil-map-marker"></i>Albacete<i class="uil uil-users-alt"></i>200</p>
+    <p>1.500<i class="uil uil-euro"></i></p>
+    <a href="index.html#contacto">Reservar</a>
+</div>
+	</div>
+  </section>
+  
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Navegación</h3>
+        <div class="footer-links">
+          <a href="#">Acerca de nosotros</a>
+          <a href="#">Contacto</a>
+          <a href="#">Política de privacidad</a>
+          <a href="#">Términos y condiciones</a>
+          <div id="cookieConsent" class="cookies" style="display: none;">
+		        <b>Este sitio web utiliza cookies para mejorar la experiencia del usuario.</b>
+		        <button onclick="aceptarCookies()" class="button_cookies">Aceptar</button>
+		   </div>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3>Redes Sociales</h3>
+        <div class="social-icons">
+          <a href="#"><img src="https://i.ibb.co/hmzvpnr/facebook-icon.png" alt="Facebook"></a>
+          <a href="#"><img src="https://i.ibb.co/8gqC1D0/twitter-icon.png" alt="Twitter"></a>
+          <a href="#" target="_blank"><img src="https://i.ibb.co/47GydLT/instagram-icon.png" alt="Instagram"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
